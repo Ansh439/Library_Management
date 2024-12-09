@@ -7,16 +7,16 @@ const AdminLogin = () => {
   const [error, setError] = useState("");
 
   const handleLogin = async (e) => {
-    // e.preventDefault();
-    // try {
-    //   const response = await axios.post("http://localhost:5000/api/admin/login", {
-    //     userId,
-    //     password,
-    //   });
-    //   alert(response.data.message);
-    // } catch (err) {
-    //   setError(err.response.data.message || "An error occurred");
-    // }
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5000/api/admin/login", {
+        userId,
+        password,
+      });
+      alert(response.data.message);
+    } catch (err) {
+      setError(err.response.data.message || "An error occurred");
+    }
   }
 
   return (
